@@ -199,7 +199,7 @@ function MainPage({ allJobs }) {
         <div className="w-full lg:w-10/12 bg-white m-2 p-2 float-right">
           <div className="grid grid-cols-1 lg:grid-cols-3 mt-5">
             <div className="">
-              <span className="float-left text-lg"><span className="font-bold">{totalJob}</span> job postings</span>
+              <span className="float-left text-md lg:text-lg"><span className="font-bold">{totalJob}</span> job postings</span>
             </div>
             <div className="col-span-2 justify-end hidden lg:block">
               <ul className="flex float-right">
