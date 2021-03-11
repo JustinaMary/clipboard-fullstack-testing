@@ -1,13 +1,13 @@
 # Clipboard Health Fullstack Candidate testing
 
 ## Public URL
-- https://google.com
+- https://clipboard-fullstack-testing.vercel.app
 
 ## Installation Steps
 
-#  To install dependencies    
+## To install dependencies    
 - npm install
-#  To run application on development machine
+##  To run application on development machine
 - npm run dev
 
 ## To build the project for Production
@@ -16,12 +16,12 @@
 
 ## Unit testing with JEST
 
-# To install JEST
+## To install JEST
 - npm install --save-dev jest
-# To run the test
+## To run the test
 - npm run test
 
-# To install tailwindcss
+## To install tailwindcss
 - npm install tailwindcss
 
 ## Following are the task which I have completed
