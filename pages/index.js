@@ -12,23 +12,23 @@ const Index = ({allJobs}) => (
   </div>
 )
 
-export async function getStaticProps() {  
-  return {
-    props:{ allJobs : { jobs: jobs } }
-  };
-}
-
-// export async function getStaticProps() {
-//   const res = await fetch('http://127.0.0.1::3000/api/jobs')
-//   const data = await res.json()
-//   if (!data) {
-//     return {
-//       notFound: true,
-//     }
-//   }
+// export async function getStaticProps() {  
 //   return {
-//     props: { allJobs: data}, // will be passed to the page component as props
-//   }
+//     props:{ allJobs : { jobs: jobs } }
+//   };
 // }
+
+export async function getStaticProps() {
+  const res = await fetch('https://clipboard-fullstack-testing.vercel.app/api/jobs')
+  const data = await res.json()
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return {
+    props: { allJobs: data}, // will be passed to the page component as props
+  }
+}
 
 export default Index
