@@ -1,29 +1,30 @@
 import { createMocks } from 'node-mocks-http';
-import handleFilters from '../pages/api/filters';
-
-describe('/api/filters', () => {
-  test('returns filters', async () => {
-    const { req, res } = createMocks({
-      method: 'GET'
-    });
-
-    await handleFilters(req, res);
-    expect(res._getStatusCode()).toBe(200);
-  });
-});
+import handleFilter from '../pages/api/filters';
+import handleJobs from '../pages/api/jobs';
 
 describe('/api/jobs', () => {
-  test('returns jobs', async () => {
+  test('responds 200 to Jobs', async () => {
+    expect.assertions(1)
     const data = {
       q: '',
       sorts: []
     }
     const { req, res } = createMocks({
-      method: 'POST',
+      method: 'GET',
       body: JSON.stringify(data)
     });
+    await handleJobs(req, res);
+    expect(res._getStatusCode()).toBe(200);
+  });
+});
 
-    await handleFilters(req, res);
+describe('/api/filters', () => {
+  test('responds 200 to Filter', async () => {
+    expect.assertions(1)
+    const { req, res } = createMocks({
+      method: 'GET'
+    });
+    await handleFilter(req, res);
     expect(res._getStatusCode()).toBe(200);
   });
 });
