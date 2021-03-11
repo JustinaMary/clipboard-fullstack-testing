@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from '../components/nav';
 import Footer from '../components/footer';
 import MainPage from '../components/mainpage';
-import jobs from '../data/jobs'
+// import jobs from '../data/jobs'
 
 const Index = ({allJobs}) => (
   <div className="bg-gray-200">
