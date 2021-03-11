@@ -9,8 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "test": "jest --watchAll",
-    "export": "next start"
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "@babel/preset-env": "^7.13.9",
