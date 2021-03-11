@@ -34,8 +34,7 @@ function MainPage({ allJobs }) {
       }
     });
   }
-
-
+  
   // event to toggle detail info about the Job 
 
   const toggleJobDetails = (e) => {
@@ -114,7 +113,7 @@ function MainPage({ allJobs }) {
           if (role == 0) {
             sortResult = sortJobsDataByProperty(data.jobs, 'items.job_title');
           } else if (role == 1) {
-            sortResult = sortJobsDataByProperty(data.jobs, 'items.job_title',-1);
+            sortResult = sortJobsDataByProperty(data.jobs, 'items.job_title', -1);
           }
           const tempData = { jobs: sortResult };
           setData(tempData);
@@ -193,17 +192,18 @@ function MainPage({ allJobs }) {
           <input type="search" name="smartSearch" onChange={smartSearch} className="text-sm h-10 text-lg w-full text-black bg-white rounded-md pl-10 focus:outline-none focus:bg-white" placeholder="Search for any job, title, keywords or company" autoComplete="off" />
         </div>
       </div>
-
       <div className="flex flex-auto rounded-md">
         <div className="hidden lg:block w-2/12 m-2 rounded-sm">
           <FilterBar />
         </div>
         <div className="w-full lg:w-10/12 bg-white m-2 p-2 float-right">
-          <div className="flex hidden lg:block mt-5">
-            <span className="float-left w-4/12 text-lg"><span className="font-bold">{totalJob}</span> job postings</span>
-            <div className="flex justify-end w-8/12">
-              <span className="text-gray-400 text-lg">Sort by : </span>
-              <ul className="flex">
+          <div className="grid grid-cols-1 lg:grid-cols-3 mt-5">
+            <div className="">
+              <span className="float-left text-lg"><span className="font-bold">{totalJob}</span> job postings</span>
+            </div>
+            <div className="col-span-2 justify-end hidden lg:block">
+              <ul className="flex float-right">
+              <li className="text-gray-400 text-lg">Sort by : </li>
                 <li className="ml-3 font-normal text-lg" onClick={sortEvent} name="location">Location<FaArrowDown className={location === 1 ? 'arrow' : 'hidden'} /><FaArrowUp className={location === 2 ? 'arrow' : 'hidden'} /></li>
                 <li className="ml-3 font-normal text-lg" onClick={sortEvent} name="role">Role<FaArrowUp className={role === 2 ? 'arrow' : 'hidden'} /><FaArrowDown className={role === 1 ? 'arrow' : 'hidden'} /></li>
                 <li className="ml-3 font-normal text-lg" onClick={sortEvent} name="department">Department<FaArrowDown className={department === 1 ? 'arrow' : 'hidden'} /><FaArrowUp className={department === 2 ? 'arrow' : 'hidden'} /></li>
